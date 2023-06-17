@@ -1,3 +1,4 @@
 # ytmusic
 
-Random play song from YouTube Music liked songs.
+- experimentally play liked songs from youtube in random order
+- export youtube liked songs to csv playlist for pyradio
