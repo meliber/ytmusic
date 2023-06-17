@@ -43,6 +43,18 @@ class Playlist:
         while True:
             self._random_play(player)
 
+    def save_csv(self):
+        """
+        save playlist to csv file.
+        """
+        import csv
+        with open(f'ytmusic.csv', 'w') as f:
+            writer = csv.writer(f)
+            for track in self.tracks:
+                title = track['title']
+                url = self.get_url(track)
+                writer.writerow([title, url])
+
 def ytmusic_play(songs=liked_songs):
     """
     play random song from youtube playlist.
@@ -50,5 +62,13 @@ def ytmusic_play(songs=liked_songs):
     playlist = Playlist(songs)
     playlist.random_play()
 
+def ytmusic_save_csv(songs=liked_songs):
+    """
+    save playlist to csv file.
+    """
+    playlist = Playlist(songs)
+    playlist.save_csv()
+
 if __name__ == '__main__':
+    ytmusic_save_csv()
     ytmusic_play()

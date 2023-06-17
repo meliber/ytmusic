@@ -11,3 +11,6 @@ wheels/
 
 # credentials
 oauth.json
+
+# playlist
+*.csv
